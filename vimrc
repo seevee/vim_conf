@@ -13,6 +13,9 @@ set autoread
 "let &t_EI.="\e[1 q"
 "let &t_te.="\e[0 q"
 
+" Allow backspace over everything in insert mode
+:set backspace=indent,eol,start
+
 " Solarized Theme
 set background=dark
 let g:solarized_visibility = "high"
