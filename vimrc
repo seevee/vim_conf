@@ -22,3 +22,14 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 let g:solarized_termtrans = 1
 colorscheme solarized
+
+" Allow manual folding by indent
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
+
+" Allow folding by indentation in coffee files
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+" Set default indentation to two spaces for coffee files
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
