@@ -32,4 +32,4 @@ augroup END
 " Allow folding by indentation in coffee files
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 " Set default indentation to two spaces for coffee files
-autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+autocmd BufNewFile,BufReadPost *.coffee,*.eco setl shiftwidth=2 expandtab

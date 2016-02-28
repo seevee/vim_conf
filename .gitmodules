@@ -25,3 +25,6 @@
 [submodule "bundle/vim-eco"]
 	path = bundle/vim-eco
 	url = https://github.com/AndrewRadev/vim-eco.git
+[submodule "bundle/vim-cjsx"]
+	path = bundle/vim-cjsx
+	url = https://github.com/mtscout6/vim-cjsx.git
