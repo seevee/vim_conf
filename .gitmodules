@@ -28,3 +28,9 @@
 [submodule "bundle/vim-cjsx"]
 	path = bundle/vim-cjsx
 	url = https://github.com/mtscout6/vim-cjsx.git
+[submodule "bundle/html5.vim"]
+	path = bundle/html5.vim
+	url = git@github.com:othree/html5.vim.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git

@@ -6,6 +6,8 @@ set omnifunc=syntaxcomplete#Complete
 let g:rubycomplete_buffer_loading = 1
 
 set autoread
+set tabstop=2
+set mouse=a
 
 " Dirty Cygwin hack to use block cursor for normal mode
 "let &t_ti.="\e[1 q"
@@ -33,3 +35,7 @@ augroup END
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 " Set default indentation to two spaces for coffee files
 autocmd BufNewFile,BufReadPost *.coffee,*.eco setl shiftwidth=2 expandtab
+" Set default indentation to two spaces for js and html files
+autocmd BufNewFile,BufReadPost *.js,*.ejs,*.html setl shiftwidth=2 expandtab
+" Set syntax highlighting for ejs files to html
+au BufNewFile,BufRead *.ejs set filetype=html
