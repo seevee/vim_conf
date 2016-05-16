@@ -7,7 +7,7 @@ let g:rubycomplete_buffer_loading = 1
 
 set autoread
 set tabstop=2
-set mouse=a
+"set mouse=a
 
 " Dirty Cygwin hack to use block cursor for normal mode
 "let &t_ti.="\e[1 q"
