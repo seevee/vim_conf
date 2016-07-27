@@ -1,4 +1,10 @@
-execute pathogen#infect()
+" To disable a plugin, add its bundle name to the following list
+let g:pathogen_disabled = []
+
+" Example disabling vim-eco below
+" call add(g:pathogen_disabled, 'vim-eco')
+
+call pathogen#infect()
 syntax on
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
@@ -25,6 +31,11 @@ let g:solarized_contrast = "high"
 let g:solarized_termtrans = 1
 colorscheme solarized
 
+" Allow JSX highlighting in .js files
+let g:jsx_ext_required = 0
+
+finish
+
 " Allow manual folding by indent
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
@@ -39,3 +50,4 @@ autocmd BufNewFile,BufReadPost *.coffee,*.eco setl shiftwidth=2 expandtab
 autocmd BufNewFile,BufReadPost *.js,*.ejs,*.html setl shiftwidth=2 expandtab
 " Set syntax highlighting for ejs files to html
 au BufNewFile,BufRead *.ejs set filetype=html
+
