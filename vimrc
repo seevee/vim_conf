@@ -3,25 +3,6 @@ let g:pathogen_disabled = []
 
 " Example disabling vim-eco below
 " call add(g:pathogen_disabled, 'vim-eco')
-"call add(g:pathogen_disabled, 'vim-eco')
-"call add(g:pathogen_disabled, 'vim-cjsx')
-"call add(g:pathogen_disabled, 'vim-ruby')
-"call add(g:pathogen_disabled, 'vim-rails')
-"call add(g:pathogen_disabled, 'vim-rspec')
-"call add(g:pathogen_disabled, 'vim-sensible')
-"call add(g:pathogen_disabled, 'vim-sleuth')
-"call add(g:pathogen_disabled, 'html5.vim')
-"call add(g:pathogen_disabled, 'ultisnips')
-"call add(g:pathogen_disabled, 'vim-bundler')
-"call add(g:pathogen_disabled, 'vim-snippets')
-"call add(g:pathogen_disabled, 'vim-surround')
-"call add(g:pathogen_disabled, 'vim-coffee-script')
-"call add(g:pathogen_disabled, 'vim-colors-solarized')
-
-" Removed due to bad jsx syntax highlighting (mismatched braces)
-" Replaced with yajs.vim
-call add(g:pathogen_disabled, 'vim-es6')
-"call add(g:pathogen_disabled, 'vim-javascript')
 
 call pathogen#infect()
 syntax on
@@ -33,6 +14,11 @@ let g:rubycomplete_buffer_loading = 1
 set autoread
 set tabstop=2
 "set mouse=a
+
+set shiftwidth=2
+set expandtab
+set smarttab
+set cindent
 
 " Allow backspace over everything in insert mode
 :set backspace=indent,eol,start
@@ -69,3 +55,11 @@ autocmd BufNewFile,BufReadPost *.js,*.ejs,*.html setl shiftwidth=2 expandtab
 autocmd BufNewFile,BufReadPost *.css,*.scss,*.sass setl shiftwidth=2 expandtab
 " Set syntax highlighting for ejs files to html
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" For closing Omi-Completion tip after element selection
+" Closes on movement in insert mode or when leaving insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Specify used javascript libraries for javascript-libraries-syntax-vim
+let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs,react'
