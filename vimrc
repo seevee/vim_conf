@@ -63,3 +63,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Specify used javascript libraries for javascript-libraries-syntax-vim
 let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs,react'
+
+" Powerline plugin
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" Always show statusline
+set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256
+" colours)
+set t_Co=256
