@@ -20,6 +20,9 @@ set expandtab
 set smarttab
 set cindent
 
+" Save changes in a way visible to webpack
+set backupcopy=yes
+
 " Allow backspace over everything in insert mode
 :set backspace=indent,eol,start
 
