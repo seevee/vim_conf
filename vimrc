@@ -3,6 +3,15 @@ let g:pathogen_disabled = []
 
 " Example disabling vim-eco below
 " call add(g:pathogen_disabled, 'vim-eco')
+call add(g:pathogen_disabled, 'vim-eco')
+call add(g:pathogen_disabled, 'vim-coffee-script')
+"call add(g:pathogen_disabled, 'javascript-libraries-syntax.vim')
+call add(g:pathogen_disabled, 'typescript-vim')
+"call add(g:pathogen_disabled, 'vim-jsx')
+call add(g:pathogen_disabled, 'vim-cjsx')
+"call add(g:pathogen_disabled, 'yajs.vim')
+"call add(g:pathogen_disabled, 'tern_for_vim')
+"call add(g:pathogen_disabled, 'YouCompleteMe')
 
 call pathogen#infect()
 syntax on
@@ -31,6 +40,7 @@ set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 let g:solarized_termtrans = 1
+call add(g:pathogen_disabled, 'yajs.vim')
 colorscheme solarized
 
 " Dirty Cygwin hack to use block cursor for normal mode
@@ -49,7 +59,7 @@ let g:jsx_ext_required = 0
 "augroup END
 
 " Allow folding by indentation in coffee files
-"autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 " Set default indentation to two spaces for coffee files
 autocmd BufNewFile,BufReadPost *.coffee,*.eco setl shiftwidth=2 expandtab
 " Set default indentation to two spaces for js and html files
@@ -65,7 +75,7 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Specify used javascript libraries for javascript-libraries-syntax-vim
-let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs,react'
+let g:used_javascript_libs = 'angularjs,react'
 
 " Powerline plugin
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
