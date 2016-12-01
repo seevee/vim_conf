@@ -6,7 +6,7 @@ let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-eco')
 call add(g:pathogen_disabled, 'vim-coffee-script')
 "call add(g:pathogen_disabled, 'javascript-libraries-syntax.vim')
-call add(g:pathogen_disabled, 'typescript-vim')
+"call add(g:pathogen_disabled, 'typescript-vim')
 "call add(g:pathogen_disabled, 'vim-jsx')
 call add(g:pathogen_disabled, 'vim-cjsx')
 "call add(g:pathogen_disabled, 'yajs.vim')
@@ -17,6 +17,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
+let g:used_javascript_libs = 'angularjs,react'
 set omnifunc=syntaxcomplete#Complete
 let g:rubycomplete_buffer_loading = 1
 
@@ -50,7 +51,7 @@ colorscheme solarized
 "let &t_te.="\e[0 q"
 
 " Allow JSX highlighting in .js files
-let g:jsx_ext_required = 0
+"let g:jsx_ext_required = 0
 
 " Allow manual folding by indent
 "augroup vimrc
@@ -75,7 +76,7 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Specify used javascript libraries for javascript-libraries-syntax-vim
-let g:used_javascript_libs = 'angularjs,react'
+"let g:used_javascript_libs = 'angularjs,react'
 
 " Powerline plugin
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
