@@ -56,7 +56,7 @@ colorscheme solarized
 "let &t_te.="\e[0 q"
 
 " Allow JSX highlighting in .js files
-"let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0
 
 " Allow manual folding by indent
 "augroup vimrc
