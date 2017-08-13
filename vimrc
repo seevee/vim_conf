@@ -22,7 +22,7 @@ syntax on
 filetype plugin indent on
 
 " VIM DEFAULTS
-let g:used_javascript_libs = 'angularjs,react'
+let g:used_javascript_libs = 'angularjs,react,vue'
 "set omnifunc=syntaxcomplete#Complete
 let g:rubycomplete_buffer_loading = 1
 
@@ -65,9 +65,9 @@ let g:jsx_ext_required = 0
 "augroup END
 
 " Allow folding by indentation in coffee files
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+"autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 " Set default indentation to two spaces for coffee files
-autocmd BufNewFile,BufReadPost *.coffee,*.eco setl shiftwidth=2 expandtab
+"autocmd BufNewFile,BufReadPost *.coffee,*.eco setl shiftwidth=2 expandtab
 " Set default indentation to two spaces for js and html files
 autocmd BufNewFile,BufReadPost *.js,*.ejs,*.html setl shiftwidth=2 expandtab
 " Set default indentation to four spaces for ts files
