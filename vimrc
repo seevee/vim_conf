@@ -5,11 +5,7 @@
 let g:pathogen_disabled = []
 
 " Example disabling vim-eco below
-call add(g:pathogen_disabled, 'vim-eco')
-call add(g:pathogen_disabled, 'vim-coffee-script')
-call add(g:pathogen_disabled, 'javascript-libraries-syntax.vim')
-call add(g:pathogen_disabled, 'vim-cjsx')
-call add(g:pathogen_disabled, 'yajs.vim')
+call add(g:pathogen_disabled, 'JavaScript-Indent')
 
 call pathogen#infect()
 syntax on
