@@ -40,9 +40,6 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = git@github.com:ternjs/tern_for_vim.git
-[submodule "bundle/JavaScript-Indent"]
-	path = bundle/JavaScript-Indent
-	url = git@github.com:lukeyeager/JavaScript-Indent.git
 [submodule "bundle/typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git

@@ -4,8 +4,8 @@
 " To disable a plugin, add its bundle name to the following list
 let g:pathogen_disabled = []
 
-" Example disabling vim-eco below
-call add(g:pathogen_disabled, 'JavaScript-Indent')
+" Example disabling plugin below
+"call add(g:pathogen_disabled, 'JavaScript-Indent')
 
 call pathogen#infect()
 syntax on
@@ -25,6 +25,8 @@ set shiftwidth=2
 set expandtab
 set smarttab
 set cindent
+set smartindent
+set autoindent
 
 " Save changes in a way visible to webpack
 set backupcopy=yes
@@ -89,6 +91,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" TYPESCRIPT
+" to make chained methods indent properly
+" COPIED FROM REPO, BUT DOES NOT SEEM TO WORK
+"setlocal indentkeys+=0.
 
 " TSQUQUYOMI
 " syntastic integration
