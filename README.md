@@ -1,4 +1,4 @@
-#vim_conf
+# vim_conf
 
 VIM config files and Pathogen-based submodule plugin collection.
 
@@ -6,11 +6,11 @@ Includes YouCompleteMe for IDE-like functionality.
 
 Plays well with tmux and tmuxinator.
 
-##Quirks
+## Quirks
 
 2 space tabs, solarized colorscheme, 
 
-##Syntax support
+## Syntax support
 
 * JS/ES6
 * C#
@@ -20,7 +20,7 @@ Plays well with tmux and tmuxinator.
 * Coffeescript
 * HTML/CSS
 
-##Ubuntu Installation
+## Ubuntu Installation
 
 Install dependencies for YouCompleteMe (YCM):
 ```
@@ -38,7 +38,7 @@ echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /
 sudo apt-get update
 ```
 
-###Language Servers
+### Language Servers
 These can be done individually as a sanity check, else they are done with the following section's script call.
 C# server:
 ```
@@ -52,14 +52,14 @@ cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 npm install --production
 ```
 
-###Final Step
+### Final Step
 Compile YCM with semantic support for C-family languages, C#, and JavaScript:
 ```
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --omnisharp-completer --tern-completer
 ```
 
-##Updates
+## Updates
 
 ```
 git submodule update --init --recursive
