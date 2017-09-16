@@ -10,7 +10,7 @@ Currently tested only against Kubuntu 17.04; system-agnostic in theory.
 
 ## Quirks
 
-2 space tabs, mostly solarized colorscheme, 
+2 space tabs, mostly solarized colorscheme.
 
 ## Syntax support
 
