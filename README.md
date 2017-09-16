@@ -1,26 +1,28 @@
 # vim_conf
 
-VIM config files and Pathogen-based submodule plugin collection.
+[Vim](https://github.com/vim/vim) config files and [Pathogen](https://github.com/tpope/vim-pathogen)-based submodule plugin collection.
 
-Includes YouCompleteMe for IDE-like functionality.
+Includes [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) and [Tsuquyomi](https://github.com/Quramy/tsuquyomi) for IDE-like functionality.
 
-Plays well with tmux and tmuxinator.
+Plays well with [tmux](https://github.com/tmux/tmux), [tmuxinator](https://github.com/tmuxinator/tmuxinator), [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh), and [Powerline](https://github.com/powerline/powerline).
+
+Currently tested only against Kubuntu 17.04; system-agnostic in theory.
 
 ## Quirks
 
-2 space tabs, solarized colorscheme, 
+2 space tabs, mostly solarized colorscheme, 
 
 ## Syntax support
 
-* JS/ES6
+* JS/ES6/ES7
+  * React, Angular, Vue
+  * Node
+* HTML/CSS
 * C#
 * C/C++/Obj. C
-* Ruby
-* ReactJS
-* Coffeescript
-* HTML/CSS
+* Ruby/Rails
 
-## Ubuntu Installation
+## Manual Installation (Ubuntu)
 
 Install dependencies for YouCompleteMe (YCM):
 ```
@@ -40,6 +42,7 @@ sudo apt-get update
 
 ### Language Servers
 These can be done individually as a sanity check, else they are done with the following section's script call.
+
 C# server:
 ```
 cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer
