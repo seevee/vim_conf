@@ -84,3 +84,8 @@ let g:ycm_semantic_triggers = {
       \ 'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
       \ 'ruby' : ['.', '::']
       \ }
+
+" ALE
+" set Ctrl-j/k to error navigation
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
