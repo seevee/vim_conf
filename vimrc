@@ -65,26 +65,10 @@ set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
-" SYNTASTIC
-" recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " TYPESCRIPT
 " to make chained methods indent properly
 " COPIED FROM REPO, BUT DOES NOT SEEM TO WORK
 "setlocal indentkeys+=0.
-
-" TSQUQUYOMI
-" syntastic integration
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker
 
 " YOUCOMPLETEME
 " blacklist typescript, hands over to tsuquyomi
