@@ -2,11 +2,15 @@
 
 [Vim](https://github.com/vim/vim) config files and [Pathogen](https://github.com/tpope/vim-pathogen)-based submodule plugin collection.
 
-Includes [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) and [Tsuquyomi](https://github.com/Quramy/tsuquyomi) for IDE-like functionality.
+Includes [YouCompleteMe](https://github.com/Valloric/YouCompleteMe), [Tsuquyomi](https://github.com/Quramy/tsuquyomi), and [ALE](https://github.com/w0rp/ale) for IDE-like functionality.
 
-Plays well with [tmux](https://github.com/tmux/tmux), [tmuxinator](https://github.com/tmuxinator/tmuxinator), [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh), and [Powerline](https://github.com/powerline/powerline).
+Plays well with:
+* [tmux](https://github.com/tmux/tmux)
+* [tmuxinator](https://github.com/tmuxinator/tmuxinator)
+* [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [Powerline](https://github.com/powerline/powerline).
 
-Currently tested only against Kubuntu 17.04; system-agnostic in theory.
+Tested against Kubuntu 18.04, OSX; system-agnostic in theory.
 
 ## Quirks
 
@@ -21,6 +25,13 @@ Currently tested only against Kubuntu 17.04; system-agnostic in theory.
 * C#
 * C/C++/Obj. C
 * Ruby/Rails
+
+## Installation
+
+Execute the install script in the project root:
+```
+./install.sh
+```
 
 ## Manual Installation (Ubuntu)
 
