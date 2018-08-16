@@ -2,11 +2,11 @@
 
 # determine OS and run appropriate dependency installation script
 
-DOTFILES=$PWD
+VIM_DIR=$PWD
 
 case "$OSTYPE" in
-  linux*)   source $DOTFILES/ubuntu/install.sh;;
-  darwin*)  source $DOTFILES/osx/install.sh;;
+  linux*)   source $VIM_DIR/ubuntu/install.sh;;
+  darwin*)  source $VIM_DIR/osx/install.sh;;
   win*)     echo "Unsupported OS: $OSTYPE";;
   msys*)    echo "Unsupported OS: $OSTYPE";;
   cygwin*)  echo "Unsupported OS: $OSTYPE";;
@@ -16,4 +16,4 @@ case "$OSTYPE" in
 esac
 
 echo "configuring vim..."
-source $DOTFILES/configure.sh
+source $VIM_DIR/configure.sh

@@ -59,7 +59,7 @@ let g:solarized_termtrans = 1
 colorscheme solarized
 
 " POWERLINE
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 " Always show statusline
 set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
@@ -74,7 +74,7 @@ set t_Co=256
 " blacklist typescript, hands over to tsuquyomi
 let g:ycm_filetype_blacklist = { 'typescript': 1 }
 " Semantic triggering
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 if !exists("g:ycm_semantic_triggers")
       let g:ycm_semantic_triggers = {}
 endif

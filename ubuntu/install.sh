@@ -2,4 +2,4 @@
 
 # install ubuntu dependencies
 
-sudo apt-get install cmake build-essential git vim-nox python-dev python3-dev python-pip -y
+sudo apt-get install cmake build-essential git vim-nox python3-dev python3-pip -y
