@@ -7,6 +7,7 @@ let g:pathogen_disabled = []
 
 " Example disabling plugin below
 "call add(g:pathogen_disabled, 'JavaScript-Indent')
+call add(g:pathogen_disabled, 'tsuquyomi')
 
 call pathogen#infect()
 syntax on
@@ -39,14 +40,17 @@ let g:jsx_ext_required = 0
 " Set default indentation to two spaces for js and html files
 autocmd BufNewFile,BufReadPost *.js,*.ejs,*.html setl tabstop=2 shiftwidth=2 expandtab
 " Set default indentation to four spaces for ts files
-autocmd BufNewFile,BufReadPost *.ts setl tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufReadPost *.ts setl tabstop=2 shiftwidth=2 expandtab
 " Set default indentation to two spaces for css, scss, and sass files
 autocmd BufNewFile,BufReadPost *.css,*.scss,*.sass setl tabstop=2 shiftwidth=2 expandtab
 " Set syntax highlighting for ejs files to html
 au BufNewFile,BufRead *.ejs set filetype=html
 
-" Use F2 as line number toggle (absolute and relative mix)
+" Use F2 as line number toggle (relative default, absolute on insertion)
 nmap <F2> :set number! relativenumber! number?<CR>
+" Set numbering by mode - https://stackoverflow.com/a/43579781/3366431
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 
 " PLUGIN SETTINGS
@@ -72,7 +76,7 @@ set t_Co=256
 
 " YOUCOMPLETEME
 " blacklist typescript, hands over to tsuquyomi
-let g:ycm_filetype_blacklist = { 'typescript': 1 }
+" let g:ycm_filetype_blacklist = { 'typescript': 1 }
 " Semantic triggering
 let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 if !exists("g:ycm_semantic_triggers")
