@@ -7,13 +7,5 @@ touch $HOME/.bash_profile
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install osx dependencies
-brew install cmake git vim python
+brew install cmake git vim
 
-# re-link python
-brew unlink python && brew link python
-
-# install pip
-sudo easy_install pip
-
-# install tmuxinator with ruby
-gem install tmuxinator
