@@ -1,6 +1,6 @@
 # vim_conf
 
-[Vim](https://github.com/vim/vim) config files and [Pathogen](https://github.com/tpope/vim-pathogen)-based submodule plugin collection.
+[Vim](https://github.com/vim/vim) config with [Vim-Plug](https://github.com/junegunn/vim-plug) package management.
 
 Includes [ALE](https://github.com/w0rp/ale) for IDE-like functionality.
 
@@ -10,20 +10,18 @@ Plays well with:
 * [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [Powerline](https://github.com/powerline/powerline).
 
-Tested against Kubuntu 18.04, OSX (requires [Homebrew](https://brew.sh/)); system-agnostic in theory.
+Tested against Kubuntu 19.04, OSX (requires [Homebrew](https://brew.sh/)); system-agnostic in theory.
 
 ## Quirks
 
-2 space tabs, mostly solarized colorscheme.
+2 space tabs, solarized8 theme.
 
 ## Syntax support
 
-* JS/ES6/ES7
-  * React, Angular, Vue
+* ES6+/TS
+  * Angular, Vue
   * Node
 * HTML/CSS
-* C/C++/Obj. C
-* Ruby/Rails
 
 ## Installation
 
@@ -32,8 +30,3 @@ Execute the install script in the project root:
 ./install.sh
 ```
 
-## Updates
-
-```
-git submodule update --init --recursive
-```
