@@ -8,12 +8,6 @@ git submodule update --init --recursive
 
 ### VIM
 
-# install YouCompleteMe
-cd $VIM_DIR/bundle/YouCompleteMe
-alias python=python3
-/usr/bin/env python3 ./install.py --clang-completer --tern-completer
-cd $VIM_DIR
-
 # install vimproc
 cd $VIM_DIR/bundle/vimproc.vim
 make
