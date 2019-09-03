@@ -1,14 +1,23 @@
 " seevee vimrc
 
+" VIM-PLUG
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-sleuth'
+Plug 'dense-analysis/ale'
+Plug 'lifepillar/vim-solarized8'
+Plug 'othree/yajs.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+call plug#end()
 
-" PATHOGEN
-" To disable a plugin, add its bundle name to the following list
-let g:pathogen_disabled = []
-
-" Example disabling plugin below
-"call add(g:pathogen_disabled, 'JavaScript-Indent')
-
-call pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -57,9 +66,8 @@ autocmd InsertLeave * :set relativenumber
 " SOLARIZED THEME
 set background=dark
 let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
 let g:solarized_termtrans = 1
-colorscheme solarized
+colorscheme solarized8
 
 " POWERLINE
 set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
@@ -67,26 +75,6 @@ set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
-
-" TYPESCRIPT
-" to make chained methods indent properly
-" COPIED FROM REPO, BUT DOES NOT SEEM TO WORK
-"setlocal indentkeys+=0.
-
-" YOUCOMPLETEME
-" blacklist typescript, hands over to tsuquyomi
-" let g:ycm_filetype_blacklist = { 'typescript': 1 }
-" Semantic triggering
-"let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
-"if !exists("g:ycm_semantic_triggers")
-"      let g:ycm_semantic_triggers = {}
-"endif
-"let g:ycm_semantic_triggers = {
-"      \ 'c' : ['->', '.'],
-"      \ 'html': ['<', '"', '</', ' '],
-"      \ 'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-"      \ 'ruby' : ['.', '::']
-"      \ }
 
 " ALE
 let g:ale_completion_enabled = 1
