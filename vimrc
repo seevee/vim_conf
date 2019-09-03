@@ -7,7 +7,6 @@ let g:pathogen_disabled = []
 
 " Example disabling plugin below
 "call add(g:pathogen_disabled, 'JavaScript-Indent')
-call add(g:pathogen_disabled, 'tsuquyomi')
 
 call pathogen#infect()
 syntax on

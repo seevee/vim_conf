@@ -2,7 +2,7 @@
 
 [Vim](https://github.com/vim/vim) config files and [Pathogen](https://github.com/tpope/vim-pathogen)-based submodule plugin collection.
 
-Includes [YouCompleteMe](https://github.com/Valloric/YouCompleteMe), [Tsuquyomi](https://github.com/Quramy/tsuquyomi), and [ALE](https://github.com/w0rp/ale) for IDE-like functionality.
+Includes [ALE](https://github.com/w0rp/ale) for IDE-like functionality.
 
 Plays well with:
 * [tmux](https://github.com/tmux/tmux)
