@@ -78,20 +78,22 @@ set t_Co=256
 " blacklist typescript, hands over to tsuquyomi
 " let g:ycm_filetype_blacklist = { 'typescript': 1 }
 " Semantic triggering
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
-if !exists("g:ycm_semantic_triggers")
-      let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers = {
-      \ 'c' : ['->', '.'],
-      \ 'html': ['<', '"', '</', ' '],
-      \ 'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-      \ 'ruby' : ['.', '::']
-      \ }
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+"if !exists("g:ycm_semantic_triggers")
+"      let g:ycm_semantic_triggers = {}
+"endif
+"let g:ycm_semantic_triggers = {
+"      \ 'c' : ['->', '.'],
+"      \ 'html': ['<', '"', '</', ' '],
+"      \ 'cs,java,javascript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+"      \ 'ruby' : ['.', '::']
+"      \ }
 
 " ALE
+let g:ale_completion_enabled = 1
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {'vue': ['eslint', 'vls']}
 " set Ctrl-j/k to error navigation
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
