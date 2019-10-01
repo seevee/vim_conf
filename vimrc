@@ -67,6 +67,8 @@ set t_Co=256
 " ALE
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
+" to fix auto complete bug
+set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {'vue': ['eslint', 'vls']}
 " set Ctrl-j/k to error navigation
