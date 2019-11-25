@@ -21,20 +21,6 @@ fi
 [ "$DISTRO" == "" ] && export DISTRO=$UNAME
 unset UNAME
 
-printf ${Cyan}
-printf "found OS: "
-printf ${Yellow}
-printf "$OSTYPE"
-printf ${Rst}
-printf "\n\n"
-
-printf ${Cyan}
-printf "found Distro: "
-printf ${Yellow}
-printf "$DISTRO"
-printf ${Rst}
-printf "\n\n"
-
 # install dotfiles from within this script's working dir
 case "$OSTYPE" in
   linux*)
@@ -63,8 +49,8 @@ printf "\n"
 source $VIM_DIR/configure.sh
 
 printf "\n"
-printf ${Cyan}
-printf "done"
+printf ${Green}
+printf "vim configuration installed"
 printf ${Rst}
 printf "\n\n"
 
