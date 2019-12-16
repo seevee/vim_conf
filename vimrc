@@ -42,12 +42,9 @@ set backupcopy=yes
 " allow backspace over everything in insert mode
 :set backspace=indent,eol,start
 
-" use F2 as line number toggle (relative default, absolute on insertion)
-nmap <F2> :set number! relativenumber! number?<CR>
-" set numbering by mode - https://stackoverflow.com/a/43579781/3366431
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
-
+" use F2 as line number toggle
+set nonumber
+nmap <F2> :set number!<CR>
 
 " SOLARIZED THEME
 set background=dark
