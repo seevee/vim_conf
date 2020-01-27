@@ -68,7 +68,11 @@ set omnifunc=ale#completion#OmniFunc
 " to fix auto complete bug
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = {'vue': ['eslint', 'vls']}
+let g:ale_linters = {
+      \ 'vue': ['eslint', 'vls']
+      \}
+" allow c++ linter to pick up compile_commands.json
+let g:ale_c_parse_compile_commands = 1
 " set Ctrl-j/k to error navigation
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
