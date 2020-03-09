@@ -77,3 +77,9 @@ let g:ale_c_parse_compile_commands = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" set leader key
+let mapleader = ','
+
+" add simple highlight removal
+nmap <Leader><space> :nohlsearch<cr>
+
