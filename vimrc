@@ -13,7 +13,7 @@ Plug 'dense-analysis/ale'
 Plug 'lifepillar/vim-solarized8'
 Plug 'othree/yajs.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'posva/vim-vue'
+Plug 'leafOfTree/vim-vue-plugin'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'iloginow/vim-stylus'
@@ -82,4 +82,9 @@ let mapleader = ','
 
 " add simple highlight removal
 nmap <Leader><space> :nohlsearch<cr>
+
+" vim-vue-plugin settings
+let g:vim_vue_plugin_load_full_syntax = 1
+let g:vim_vue_plugin_use_typescript = 1
+let g:vim_vue_plugin_use_stylus = 1
 
