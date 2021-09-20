@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # determine OS and run appropriate dependency installation script
 
-VIM_DIR=$PWD
+VIM_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $VIM_DIR/scripts/terminal_control.sh
 
 # From terdon on SO: https://askubuntu.com/a/459425/548109
