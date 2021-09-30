@@ -2,7 +2,7 @@
 
 # update and install vim + packages
 
-VIM_DIR=$PWD
+VIM_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # create symbolic links, overwrite old vim configuration
 rm -rf $HOME/.vim
