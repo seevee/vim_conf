@@ -15,12 +15,12 @@ call plug#begin('~/.vim/plugged')
 " general plugins
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sleuth'
+
 " solarized theme
 Plug 'lifepillar/vim-solarized8'
 set background=dark
 let g:solarized_visibility = "high"
 let g:solarized_termtrans = 1
-
 
 " ALE
 Plug 'dense-analysis/ale'
@@ -77,6 +77,9 @@ Plug 'jparise/vim-graphql'
 Plug 'hashivim/vim-terraform'
 
 " git
+Plug 'tpope/vim-fugitive'
+
+" nerdtree
 Plug 'preservim/nerdtree'
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
