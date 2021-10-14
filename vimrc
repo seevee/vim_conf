@@ -1,5 +1,8 @@
 " seevee vimrc
 
+" set leader key
+let mapleader = ','
+
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -72,6 +75,16 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'hashivim/vim-terraform'
 
+" git
+Plug 'preservim/nerdtree'
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+
 call plug#end()
 
 
@@ -112,9 +125,6 @@ set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 set laststatus=2
 " use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
-
-" set leader key
-let mapleader = ','
 
 " add simple highlight removal
 nmap <Leader><space> :nohlsearch<cr>
