@@ -72,6 +72,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " other languages
+Plug 'neoclide/jsonc.vim'
 Plug 'jparise/vim-graphql'
 Plug 'hashivim/vim-terraform'
 
