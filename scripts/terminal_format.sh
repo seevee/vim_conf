@@ -8,44 +8,57 @@ BULLET="↳"
 CHECK="✓"
 INFO="🛈"
 X="⨯"
+STAR="★ "
+SYMBOL="꧂ "
 
 h1 () {
-  printf "\n${Cyan}$1${Rst}\n"
+  printf "\n\
+${Cyan}$SYMBOL \
+${Cyan}$1\
+${Rst}\n"
 }
 
 h1_emphasis () {
-  printf "\n"
-  printf ${Cyan}
-  printf "$1"
-  printf ${Yellow}
-  printf "$2"
-  printf ${Cyan}
-  printf "$3"
-  printf ${Rst}
-  printf "\n"
+  printf "\n\
+${Cyan}$SYMBOL \
+${Cyan}$1\
+${Yellow}$2\
+${Cyan}$3\
+${Rst}\n"
 }
 
 h1_success () {
-  printf "\n${Green}$1${Rst}\n"
+  printf "\n\
+${Green}$STAR \
+${Green}$1 \
+${Rst}\n"
 }
 
 h1b () {
-  printf ${Cyan}
-  printf "$BULLET "
-  printf "${Blue}$1${Rst}\n"
+  printf "\
+${Cyan}$BULLET \
+${Blue}$1\
+${Rst}\n"
 }
 
 h2 () {
-  printf ${Yellow}
-  printf "$INFO "
-  printf "${Yellow}$1${Rst}\n"
+  printf "\
+${Yellow}$INFO \
+${Yellow}$1 \
+${Rst}\n"
 }
 
 success () {
-  printf "${Green}$CHECK $1${Rst}\n"
+  printf "\
+${Green}$CHECK \
+${Green}$1\
+${Rst}\n"
 }
 
 err () {
-  printf "${Red}$X $1${Rst}\n"
+  printf "\
+${Red}$X \
+${Red}$1\
+${Rst}\n"
 }
 
