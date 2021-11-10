@@ -19,6 +19,7 @@ Plug 'tpope/vim-sleuth'
 " solarized theme
 Plug 'lifepillar/vim-solarized8'
 set background=dark
+autocmd vimenter * ++nested colorscheme solarized8
 let g:solarized_visibility = "high"
 let g:solarized_termtrans = 1
 
@@ -32,6 +33,12 @@ let g:ale_disable_lsp = 1
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
+      \ 'vue': ['eslint', 'vls'],
+      \}
+let g:ale_fixers = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
       \ 'vue': ['eslint', 'vls'],
       \}
 " allow c++ linter to pick up compile_commands.json
@@ -47,15 +54,18 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-html',
       \ 'coc-json',
+      \ 'coc-markdownlint',
       \ 'coc-prettier',
       \ 'coc-pyright',
       \ 'coc-tsserver',
-      \ 'coc-vetur'
+      \ 'coc-vetur',
+      \ '@yaegassy/coc-nginx'
       \]
+source $HOME/.vim/coc.vimrc
 
 " JavaScript/Typescript
-Plug 'othree/yajs.vim'
-Plug 'leafgarland/typescript-vim'
+"Plug 'othree/yajs.vim'
+"Plug 'leafgarland/typescript-vim'
 Plug 'leafOfTree/vim-vue-plugin'
 let g:vim_vue_plugin_load_full_syntax = 1
 let g:vim_vue_plugin_use_typescript = 1
@@ -71,7 +81,13 @@ Plug 'iloginow/vim-stylus'
 Plug 'digitaltoad/vim-pug'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+" markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
+
 " other languages
+Plug 'tpope/vim-dotenv'
 Plug 'neoclide/jsonc.vim'
 Plug 'jparise/vim-graphql'
 Plug 'hashivim/vim-terraform'
@@ -91,11 +107,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 call plug#end()
 
-
-" apply solarized theme
-if !empty(glob('~/.vim/plugged/vim-solarized8'))
-  colorscheme solarized8
-endif
 
 " vim defaults
 syntax on
