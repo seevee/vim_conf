@@ -20,6 +20,8 @@ case "$OSTYPE" in
     elif [[ $DISTRO == *"fedora"* ]]; then
       printf ${Rst}
       source $VIM_DIR/fedora/install.sh
+    elif [[ $DISTRO == *"arch"* ]]; then
+      printf ${Rst}
     else
       printf "unsupported distro: $DISTRO\n\n"
       printf ${Rst}
