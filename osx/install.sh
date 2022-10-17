@@ -12,5 +12,5 @@ else
 fi
 
 # install osx dependencies
-brew install cmake git vim
+brew install cmake git vim neovim
 

@@ -5,6 +5,6 @@ sudo dnf install \
   cmake \
   @development-tools \
   git \
-  vim \
+  vim neovim \
   -y
 

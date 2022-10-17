@@ -1,5 +1,13 @@
 " seevee vimrc
 
+" Utilities to tell whether a plugin is configured or installed.
+function! HasPlug(name) abort
+  return has_key(g:plugs, a:name)
+endfunction
+function! IsPlugInstalled(name) abort
+  return has_key(g:plugs, a:name) && isdirectory(g:plugs[a:name].dir)
+endfunction
+
 " set leader key
 let mapleader = ','
 
@@ -35,6 +43,7 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['eslint'],
       \ 'vue': ['eslint', 'vls'],
+      \ 'sh': ['language_server'],
       \}
 let g:ale_fixers = {
       \ 'javascript': ['eslint'],
@@ -104,6 +113,12 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+if has('nvim')
+  Plug 'feline-nvim/feline.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'neovim/nvim-lspconfig'
+endif
 
 call plug#end()
 
@@ -128,19 +143,55 @@ set mouse=a
 set backupcopy=yes
 
 " allow backspace over everything in insert mode
-:set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " use F2 as line number toggle
 set nonumber
 nmap <F2> :set number!<CR>
 
-" POWERLINE
-set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
+
+" Powerline/Feline
+
+" hide mode at the bottom
+" set noshowmode
+" hide ruler
+set noruler
 " always show statusline
 set laststatus=2
 " use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
-
 " add simple highlight removal
 nmap <Leader><space> :nohlsearch<cr>
+set termguicolors
 
+if has('nvim')
+  autocmd VimEnter * call s:setup_feline()
+else
+  set rtp+=$HOME/.local/lib/python3.10/site-packages/powerline/bindings/vim/
+endif
+
+function! s:setup_feline() abort
+lua<<EOF
+  require('feline').setup()
+EOF
+endfunction
+
+if has('nvim')
+  autocmd VimEnter * call s:setup_gitsigns()
+endif
+
+function! s:setup_gitsigns() abort
+lua<<EOF
+  require('gitsigns').setup()
+EOF
+endfunction
+
+if has('nvim')
+  autocmd VimEnter * call s:setup_bashls()
+endif
+
+function! s:setup_bashls() abort
+lua<<EOF
+  require('lspconfig').bashls.setup{}
+EOF
+endfunction
