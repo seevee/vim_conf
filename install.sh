@@ -2,8 +2,7 @@
 # determine OS and run appropriate dependency installation script
 
 VIM_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-source $VIM_DIR/scripts/terminal_format.sh
-source $VIM_DIR/scripts/functions.sh
+source $VIM_DIR/lib/bash-utils/index.sh
 
 h1 "vim configuration"
 
@@ -14,26 +13,18 @@ h1_emphasis "found distro: " "$DISTRO"
 h1b "installing dependencies..."
 case "$OSTYPE" in
   linux*)
-    if [[ "$DISTRO" == *"ubuntu"* ]]; then
-      printf ${Rst}
-      source $VIM_DIR/ubuntu/install.sh
-    elif [[ $DISTRO == *"fedora"* ]]; then
-      printf ${Rst}
-      source $VIM_DIR/fedora/install.sh
-    elif [[ $DISTRO == *"arch"* ]]; then
-      printf ${Rst}
-    else
-      printf "unsupported distro: $DISTRO\n\n"
-      printf ${Rst}
-      exit
-    fi;;
-  darwin*)  printf ${Rst} && source $VIM_DIR/osx/install.sh;;
-  win*)     printf "unsupported OS: $OSTYPE\n\n";;
-  msys*)    printf "unsupported OS: $OSTYPE\n\n";;
-  cygwin*)  printf "unsupported OS: $OSTYPE\n\n";;
-  bsd*)     printf "unsupported OS: $OSTYPE\n\n";;
-  solaris*) printf "unsupported OS: $OSTYPE\n\n";;
-  *)        printf "unknown OS: $OSTYPE\n\n";;
+    case "$DISTRO" in
+      *ubuntu*) source $VIM_DIR/ubuntu/install.sh;;
+      *fedora*) source $VIM_DIR/fedora/install.sh;;
+      *)        err "unsupported distro: $DISTRO";;
+    esac;;
+  darwin*)  source $VIM_DIR/osx/install.sh;;
+  win*)     err "unsupported OS: $OSTYPE";;
+  msys*)    err "unsupported OS: $OSTYPE";;
+  cygwin*)  err "unsupported OS: $OSTYPE";;
+  bsd*)     err "unsupported OS: $OSTYPE";;
+  solaris*) err "unsupported OS: $OSTYPE";;
+  *)        err "unknown OS: $OSTYPE";;
 esac
 success "done"
 
