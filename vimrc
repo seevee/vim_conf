@@ -1,13 +1,5 @@
 " seevee vimrc
 
-" Utilities to tell whether a plugin is configured or installed.
-function! HasPlug(name) abort
-  return has_key(g:plugs, a:name)
-endfunction
-function! IsPlugInstalled(name) abort
-  return has_key(g:plugs, a:name) && isdirectory(g:plugs[a:name].dir)
-endfunction
-
 " set leader key
 let mapleader = ','
 
@@ -24,12 +16,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sleuth'
 
+" gruvbox theme
+Plug 'gruvbox-community/gruvbox'
+let g:gruvbox_transparent_bg = 1
+
 " solarized theme
-Plug 'lifepillar/vim-solarized8'
-set background=dark
-autocmd vimenter * ++nested colorscheme solarized8
-let g:solarized_visibility = "high"
-let g:solarized_termtrans = 1
+"Plug 'lifepillar/vim-solarized8'
+"set background=dark
+"let g:solarized_termtrans = 1
+
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " ALE
 Plug 'dense-analysis/ale'
@@ -153,7 +149,7 @@ nmap <F2> :set number!<CR>
 " Powerline/Feline
 
 " hide mode at the bottom
-" set noshowmode
+set noshowmode
 " hide ruler
 set noruler
 " always show statusline
@@ -165,33 +161,14 @@ nmap <Leader><space> :nohlsearch<cr>
 set termguicolors
 
 if has('nvim')
-  autocmd VimEnter * call s:setup_feline()
+  autocmd VimEnter * call s:setup_nvim()
 else
   set rtp+=$HOME/.local/lib/python3.10/site-packages/powerline/bindings/vim/
 endif
 
-function! s:setup_feline() abort
-lua<<EOF
-  require('feline').setup()
-EOF
-endfunction
-
-if has('nvim')
-  autocmd VimEnter * call s:setup_gitsigns()
-endif
-
-function! s:setup_gitsigns() abort
+function! s:setup_nvim() abort
 lua<<EOF
   require('gitsigns').setup()
-EOF
-endfunction
-
-if has('nvim')
-  autocmd VimEnter * call s:setup_bashls()
-endif
-
-function! s:setup_bashls() abort
-lua<<EOF
   require('lspconfig').bashls.setup{}
 EOF
 endfunction

@@ -1,22 +1,22 @@
-local line_ok, feline = pcall(require, "feline")
+local line_ok, feline = pcall(require, 'feline')
 if not line_ok then
 	return
 end
 
 local gruvbox = {
-    fg = '#928374',
-    bg = '#1F2223',
-    black ='#1B1B1B',
-    skyblue = '#458588',
-    cyan = '#83a597',
-    green = '#689d6a',
-    oceanblue = '#1d2021',
-    magenta = '#fb4934',
-    orange = '#fabd2f',
-    red = '#cc241d',
-    violet = '#b16286',
-    white = '#ebdbb2',
-    yellow = '#d79921',
+	fg = '#928374',
+	bg = '#1F2223',
+	black ='#1B1B1B',
+	skyblue = '#458588',
+	cyan = '#83a597',
+	green = '#689d6a',
+	oceanblue = '#1d2021',
+	magenta = '#fb4934',
+	orange = '#fabd2f',
+	red = '#cc241d',
+	violet = '#b16286',
+	white = '#ebdbb2',
+	yellow = '#d79921',
 }
 
 local vi_mode_colors = {
@@ -42,7 +42,7 @@ local c = {
 		hl = function()
 			return {
 				fg = require("feline.providers.vi_mode").get_mode_color(),
-				bg = "oceanblue",
+				bg = "black",
 				style = "bold",
 				name = "NeovimModeHLColor",
 			}
@@ -54,7 +54,7 @@ local c = {
 		provider = "git_branch",
 		hl = {
 			fg = "white",
-			bg = "oceanblue",
+			bg = "black",
 			style = "bold",
 		},
 		left_sep = "block",
@@ -64,7 +64,7 @@ local c = {
 		provider = "git_diff_added",
 		hl = {
 			fg = "green",
-			bg = "oceanblue",
+			bg = "black",
 		},
 		left_sep = "block",
 		right_sep = "block",
@@ -73,16 +73,16 @@ local c = {
 		provider = "git_diff_removed",
 		hl = {
 			fg = "magenta",
-			bg = "oceanblue",
+			bg = "black",
 		},
 		left_sep = "block",
-		right_sep = "block",
+		right_sep = "right_filled",
 	},
 	gitDiffChanged = {
 		provider = "git_diff_changed",
 		hl = {
 			fg = "fg",
-			bg = "oceanblue",
+			bg = "black",
 		},
 		left_sep = "block",
 		right_sep = "right_filled",
@@ -128,7 +128,7 @@ local c = {
 		provider = "lsp_client_names",
 		hl = {
 			fg = "violet",
-			bg = "oceanblue",
+			bg = "black",
 			style = "bold",
 		},
 		left_sep = "left_filled",
@@ -144,17 +144,17 @@ local c = {
 		},
 		hl = {
 			fg = "magenta",
-			bg = "oceanblue",
+			bg = "black",
 			style = "bold",
 		},
-		left_sep = "block",
+		left_sep = "left_filled",
 		right_sep = "block",
 	},
 	file_encoding = {
 		provider = "file_encoding",
 		hl = {
 			fg = "orange",
-			bg = "oceanblue",
+			bg = "black",
 			style = "italic",
 		},
 		left_sep = "block",
@@ -164,7 +164,7 @@ local c = {
 		provider = "position",
 		hl = {
 			fg = "green",
-			bg = "oceanblue",
+			bg = "black",
 			style = "bold",
 		},
 		left_sep = "block",
@@ -174,7 +174,7 @@ local c = {
 		provider = "line_percentage",
 		hl = {
 			fg = "skyblue",
-			bg = "oceanblue",
+			bg = "black",
 			style = "bold",
 		},
 		left_sep = "block",
@@ -184,6 +184,7 @@ local c = {
 		provider = "scroll_bar",
 		hl = {
 			fg = "yellow",
+			bg = "black",
 			style = "bold",
 		},
 	},
@@ -193,7 +194,7 @@ local left = {
 	c.vim_mode,
 	c.gitBranch,
 	c.gitDiffAdded,
-  c.gitDiffRemoved,
+	c.gitDiffRemoved,
 	c.gitDiffChanged,
 	c.separator,
 }
