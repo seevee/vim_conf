@@ -14,7 +14,7 @@ h1b "installing dependencies..."
 case "$OSTYPE" in
   linux*)
     case "$DISTRO" in
-      *ubuntu*) source $VIM_DIR/ubuntu/install.sh;;
+      *ubuntu* | *pop*) source $VIM_DIR/ubuntu/install.sh;;
       *fedora*) source $VIM_DIR/fedora/install.sh;;
       *)        err "unsupported distro: $DISTRO";;
     esac;;
