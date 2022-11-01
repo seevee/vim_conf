@@ -153,8 +153,8 @@ set backupcopy=yes
 set backspace=indent,eol,start
 
 " use F2 as line number toggle
-set nonumber
-nmap <F2> :set number!<CR>
+set nonumber norelativenumber
+nmap <F2> :se nu! rnu!<CR>
 
 
 " Powerline/Feline
