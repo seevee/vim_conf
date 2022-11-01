@@ -72,9 +72,19 @@ source $HOME/.vim/coc.vimrc
 "Plug 'othree/yajs.vim'
 "Plug 'leafgarland/typescript-vim'
 Plug 'leafOfTree/vim-vue-plugin'
-let g:vim_vue_plugin_load_full_syntax = 1
-let g:vim_vue_plugin_use_typescript = 1
-let g:vim_vue_plugin_use_stylus = 1
+let g:vim_vue_plugin_config = {
+      \'syntax': {
+      \   'template': ['html'],
+      \   'script': ['javascript', 'typescript'],
+      \   'style': ['css', 'sass', 'scss', 'stylus'],
+      \},
+      \'full_syntax': [],
+      \'initial_indent': [],
+      \'attribute': 0,
+      \'keyword': 0,
+      \'foldexpr': 0,
+      \'debug': 0,
+      \}
 
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'peitalin/vim-jsx-typescript'
