@@ -96,6 +96,7 @@ Plug 'tpope/vim-dotenv'
 Plug 'neoclide/jsonc.vim'
 Plug 'jparise/vim-graphql'
 Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " git
 Plug 'tpope/vim-fugitive'
