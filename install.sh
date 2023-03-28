@@ -15,6 +15,7 @@ case "$OSTYPE" in
   linux*)
     case "$DISTRO" in
       *ubuntu* | *pop*) source $VIM_DIR/ubuntu/install.sh;;
+      *endeavouros* | *arch*) source $VIM_DIR/arch/install.sh;;
       *fedora*) source $VIM_DIR/fedora/install.sh;;
       *)        err "unsupported distro: $DISTRO";;
     esac;;
