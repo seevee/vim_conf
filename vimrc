@@ -125,6 +125,7 @@ if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'mfussenegger/nvim-jdtls'
 endif
 
 call plug#end()
