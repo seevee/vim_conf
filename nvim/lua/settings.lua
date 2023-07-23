@@ -29,9 +29,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
--- with feline, disable these
-vim.opt.showmode = false
-vim.opt.ruler = false
-
 -- because I'm degenerate
 vim.opt.backspace = 'indent,eol,start'

@@ -26,7 +26,7 @@ return {
       lsp.default_keymaps({buffer = bufnr})
     end)
 
-    -- disable semantic highlights
+    -- disable semantic highlights, we're using treesitter now
     lsp.set_server_config({
       on_init = function(client)
         client.server_capabilities.semanticTokensProvider = nil
