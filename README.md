@@ -1,10 +1,17 @@
-# vim_conf
+# Vim/neovim dotfiles
 
-[Vim](https://github.com/vim/vim) config with [Vim-Plug](https://github.com/junegunn/vim-plug) package management.
+Configuration for [neovim](https://github.com/neovim/neovim)
 
-Includes [ALE](https://github.com/w0rp/ale) for IDE-like functionality.
+Includes configuration for [Vim](https://github.com/vim/vim)(currently unused):
+* [Vim-Plug](https://github.com/junegunn/vim-plug) package management
+* [ALE](https://github.com/w0rp/ale) for IDE-like functionality
 
-Tested against Kubuntu 22.10, Pop! OS, OSX (requires [Homebrew](https://brew.sh/)); system-agnostic in theory.
+## Target Systems
+Currently tested against EndeavourOS and Pop! OS
+
+Previously Tested against:
+* Kubuntu 22.10
+* MacOS (requires [Homebrew](https://brew.sh/)).
 
 ## Quirks
 
@@ -12,7 +19,15 @@ Tested against Kubuntu 22.10, Pop! OS, OSX (requires [Homebrew](https://brew.sh/
 
 ## Installation
 
-Execute the install script in the project root:
+Do EITHER:
+* move `vimrc`, `coc*`, `nvim/`, etc. as desired
+* execute the install script in the project root:
 ```
 ./install.sh
 ```
+
+**Warning**
+The script will overwrite the following locations with symlinks:
+* `~/.vim`
+* `~/.vimrc`
+* `~/.config/nvim`
