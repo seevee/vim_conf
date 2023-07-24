@@ -1,12 +1,8 @@
-# Vim/neovim dotfiles
+# neovim dotfiles
 
 [neovim](https://github.com/neovim/neovim):
 * [lazy.nvim](https://github.com/folke/lazy.nvim) package management
 * Using treesitter, lsp-zero, oil, telescope, trouble, and more
-
-[Vim](https://github.com/vim/vim) (currently unused):
-* [Vim-Plug](https://github.com/junegunn/vim-plug) package management
-* [ALE](https://github.com/w0rp/ale) for IDE-like functionality
 
 ## Target Systems
 
@@ -23,14 +19,11 @@ Previously Tested against:
 ## Installation
 
 Do EITHER:
-* move `vimrc`, `coc*`, `nvim/`, etc. as desired
+* copy/symlink/etc. `nvim/` to `~/.config/nvim/`
 * execute the install script in the project root:
-```
+```sh
 ./install.sh
 ```
 
-**Warning**
-The script will overwrite the following locations with symlinks:
-* `~/.vim`
-* `~/.vimrc`
-* `~/.config/nvim`
+> **Warning**
+> `./install.sh` will overwrite `~/.config/nvim` with a symlink
