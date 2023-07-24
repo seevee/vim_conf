@@ -8,13 +8,13 @@
 
 Currently tested against EndeavourOS and Pop! OS
 
-Previously Tested against:
+Previously tested against:
 * Kubuntu 22.10
-* MacOS (requires [Homebrew](https://brew.sh/)).
+* macOS (requires [Homebrew](https://brew.sh/))
 
 ## Quirks
 
-2 space tabs, gruvbox theme.
+2 space tabs, gruvbox theme
 
 ## Installation
 
