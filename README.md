@@ -1,12 +1,15 @@
 # Vim/neovim dotfiles
 
-Configuration for [neovim](https://github.com/neovim/neovim)
+[neovim](https://github.com/neovim/neovim):
+* [lazy.nvim](https://github.com/folke/lazy.nvim) package management
+* Using treesitter, lsp-zero, oil, telescope, trouble, and more
 
-Includes configuration for [Vim](https://github.com/vim/vim)(currently unused):
+[Vim](https://github.com/vim/vim) (currently unused):
 * [Vim-Plug](https://github.com/junegunn/vim-plug) package management
 * [ALE](https://github.com/w0rp/ale) for IDE-like functionality
 
 ## Target Systems
+
 Currently tested against EndeavourOS and Pop! OS
 
 Previously Tested against:
