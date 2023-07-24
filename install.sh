@@ -4,33 +4,41 @@
 VIM_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $VIM_DIR/lib/bash-utils/index.sh
 
-h1 "vim configuration"
+h1 "vim/nvim dotfiles installation"
 
-DISTRO=$(get_linux_distribution)
 h1_emphasis "found OS: " "$OSTYPE"
-h1_emphasis "found distro: " "$DISTRO"
+h1_emphasis "found distro: " $(get_linux_distribution)
 
 h1b "installing dependencies..."
-case "$OSTYPE" in
-  linux*)
-    case "$DISTRO" in
-      *ubuntu* | *pop*) source $VIM_DIR/ubuntu/install.sh;;
-      *endeavouros* | *arch*) source $VIM_DIR/arch/install.sh;;
-      *fedora*) source $VIM_DIR/fedora/install.sh;;
-      *)        err "unsupported distro: $DISTRO";;
-    esac;;
-  darwin*)  source $VIM_DIR/osx/install.sh;;
-  win*)     err "unsupported OS: $OSTYPE";;
-  msys*)    err "unsupported OS: $OSTYPE";;
-  cygwin*)  err "unsupported OS: $OSTYPE";;
-  bsd*)     err "unsupported OS: $OSTYPE";;
-  solaris*) err "unsupported OS: $OSTYPE";;
-  *)        err "unknown OS: $OSTYPE";;
-esac
+install_packages cmake git neovim
 success "done"
 
-h1 "executing configuration..."
-source $VIM_DIR/configure.sh
+h1b "sylminking configuration..."
+overwrite_symlink $VIM_DIR $HOME/.vim
+overwrite_symlink $VIM_DIR/vimrc $HOME/.vimrc
+mkdir -p $HOME/.config
+overwrite_symlink $VIM_DIR/nvim $HOME/.config/nvim
+success "done"
 
-h1_success "vim configuration complete"
+# install vim-plug and packages
+if command -v vim &> /dev/null; then
+  h1b "installing/updating vim-plug and packages..."
 
+  vim +PlugUpgrade +PlugInstall +PlugUpdate +CocUpdate +qall
+
+  success "done"
+else
+  h2 "vim not found"
+fi
+# install Lazy.nvim and sync packages
+if command -v nvim &> /dev/null; then
+  h1b "installing/updating lazy.nvim and packages..."
+
+  nvim --headless "+Lazy! sync" +qa
+
+  success "done"
+else
+  h2 "nvim not found"
+fi
+
+h1_success "vim/neovim installation complete"
