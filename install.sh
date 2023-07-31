@@ -13,7 +13,7 @@ h1b "installing dependencies..."
 install_packages cmake git neovim
 success "done"
 
-h1b "sylminking configuration..."
+h1b "symlinking configuration..."
 mkdir -p $HOME/.config
 overwrite_symlink $REPO_DIR/nvim $HOME/.config/nvim
 success "done"
