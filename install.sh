@@ -12,13 +12,11 @@ h1_emphasis "found distro: " "$(get_linux_distribution)"
 h1 "dependencies"
 h1a "installing via package manager"
 install_packages neovim
-
 if ! command -v nvim &> /dev/null; then
   err "\`nvim\` not found"
   exit 1
-else
-  success "done"
 fi
+success "done"
 
 h1 "configuration"
 mkdir -p "$HOME"/.config
