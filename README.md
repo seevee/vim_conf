@@ -18,8 +18,14 @@ Previously tested against:
 
 ## Installation
 
-Do EITHER:
-* copy/symlink/etc. `nvim/` to `~/.config/nvim/`
+This project uses git submodules, so make sure you clone appropriately:
+
+```sh
+git clone https://github.com/seevee/vim_conf.git --recurse-submodules
+```
+
+Then do EITHER:
+* install `neovim` and copy/symlink/etc. `nvim/` to `~/.config/nvim/`
 * execute the install script in the project root:
 ```sh
 ./install.sh
