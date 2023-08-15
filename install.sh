@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # install and configure neovim
 
-REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-source "$REPO_DIR"/lib/bash-utils/index.sh
+repo_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source "$repo_dir"/lib/bash-utils/index.sh
 
 h1 "neovim dotfiles"
 
@@ -20,8 +20,8 @@ success "done"
 
 h1 "configuration"
 mkdir -p "$HOME"/.config
-h1a "linking $REPO_DIR/nvim/ to ~/.config/nvim/"
-overwrite_symlink "$REPO_DIR"/nvim "$HOME"/.config/nvim
+h1a "linking $repo_dir/nvim/ to ~/.config/nvim/"
+overwrite_symlink "$repo_dir"/nvim "$HOME"/.config/nvim
 success "done"
 
 h1a "installing lazy.nvim and packages"
