@@ -30,4 +30,4 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- because I'm degenerate
-vim.opt.backspace = 'indent,eol,start'
+vim.opt.backspace = "indent,eol,start"

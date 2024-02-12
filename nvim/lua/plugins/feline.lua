@@ -1,5 +1,6 @@
 return {
   'freddiehaddad/feline.nvim',
+  enabled = false,
   init = function ()
     vim.opt.termguicolors = true
   end,
